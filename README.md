@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 概要
 
-## Getting Started
+自分のメモを管理する web アプリ
 
-First, run the development server:
+## 技術選定
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- フロント、バックエンド
+  Next.js(App Router, Route Handlers)+TypeScript
+- ライブラリ
+  Shadcn, Tailwind, Orval, Auth.js
+- データベース
+  Drizzle+PostgresSQL
+- デプロイ
+  Vercel
+
+## ディレクトリ構成
+
+```text:sample
+/project-root
+├── /app
+│ ├── /api // API ルートハンドラを配置するフォルダ
+│ ├── /(pages) // アプリページを配置するフォルダ
+│ ├── /components
+│ │ ├── /layout // アプリ全体のレイアウトコンポーネントを配置
+│ │ └── /elements // アプリ全体で使うコンポーネントを配置するフォルダ
+│ ├── /lib // ライブラリの初期化や共通設定を行うフォルダ
+│ ├── /hooks // アプリ全体で使うカスタム React フックを配置するフォルダ
+│ ├── /types // アプリ全体で使う TypeScript の型定義を管理するフォルダ
+│ └── /utils // アプリ全体で使うユーティリティ関数を配置するフォルダ
+├── /features // ページごとに関連するコンポーネント, フック, 型定義を整理するフォルダ
+├── /public // 画像や静的ファイルを配置するフォルダ
+├── /orval // Orval で生成された API フックを配置するフォルダ
+├── /drizzle // Drizzle ORM 用のマイグレーションやスキーマ定義を配置するフォルダ
+...
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
