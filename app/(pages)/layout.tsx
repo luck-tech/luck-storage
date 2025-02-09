@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
 import {
@@ -7,7 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu";
 import { UserIcon } from "lucide-react";
-import React from "react"; // Added import for React
+import React from "react";
+import LoginButton from "../components/google-login";
 
 export default function PagesLayout({
   children,
@@ -34,8 +37,10 @@ export default function PagesLayout({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Login</DropdownMenuItem>
-                <DropdownMenuItem>Logout</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <LoginButton />
+                </DropdownMenuItem>
+                <DropdownMenuItem>admin</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
