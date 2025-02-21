@@ -10,9 +10,6 @@ const zillaSlabFont = Zilla_Slab({
 export const metadata: Metadata = {
   title: "luck Storage",
   description: "luckの個人的なメモアプリです",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
