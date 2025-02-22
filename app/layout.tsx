@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={zillaSlabFont.className}>{children}</body>
+      <body className={`${zillaSlabFont.className} bg-[#e7ecea]`}>
+        {children}
+      </body>
     </html>
   );
 }
