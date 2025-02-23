@@ -19,7 +19,7 @@ export default function PagesLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="w-full p-4 bg-[#e7ecea] border-b border-black">
+      <header className="w-full bg-[#e7ecea] border-b border-black">
         <div className="w-full flex justify-between items-center">
           <div className="w-12">{/* Empty div for balance */}</div>
           <Link

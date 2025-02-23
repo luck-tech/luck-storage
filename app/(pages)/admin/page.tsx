@@ -112,7 +112,7 @@ export default function AdminPage() {
                   >
                     <img
                       src={item.image}
-                      className="w-[170px] h-[170px] cursor-pointer"
+                      className="max-w-[170px] max-h-[170px] cursor-pointer"
                       onClick={() => handleItemClick("want", item.id)}
                     />
                   </div>
@@ -131,7 +131,7 @@ export default function AdminPage() {
               {portfolioItems.map((item) => (
                 <Card
                   key={item.id}
-                  className="relative group"
+                  className="relative group cursor-pointer"
                   onClick={() => handleItemClick("portfolio", item.id)}
                 >
                   <CardHeader>
@@ -164,7 +164,7 @@ export default function AdminPage() {
               {memoItems.map((item) => (
                 <Card
                   key={item.id}
-                  className="relative group"
+                  className="relative group cursor-pointer"
                   onClick={() => handleItemClick("memo", item.id)}
                 >
                   <CardHeader>
