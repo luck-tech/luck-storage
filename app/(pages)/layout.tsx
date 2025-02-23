@@ -36,7 +36,7 @@ export default function PagesLayout({
                   <UserIcon className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="end" className="mr-2">
                 <DropdownMenuItem>
                   <LoginButton />
                 </DropdownMenuItem>
