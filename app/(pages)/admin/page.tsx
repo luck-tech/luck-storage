@@ -1,5 +1,7 @@
 "use client";
 
+import type React from "react";
+
 import { useState } from "react";
 import {
   Tabs,
@@ -18,7 +20,7 @@ import { Button } from "@/app/components/ui/button";
 import { Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import DeleteAlert from "@/app/components/delete-alert";
-import { ItemToDelete } from "@/app/types/admin";
+import type { ItemToDelete } from "@/app/types/admin";
 import AddItemModal from "@/app/components/add-item-modal";
 
 const wantItems = [
@@ -89,6 +91,13 @@ export default function AdminPage() {
     setIsDeleteDialogOpen(true);
   };
 
+  const handleAddItem = (type: "portfolio" | "memo") => {
+    // Here you would typically make an API call to create a new item
+    // For now, we'll just generate a random ID
+    const newId = Math.floor(Math.random() * 1000) + 1;
+    router.push(`/admin/${type}/${newId}`);
+  };
+
   return (
     <div className="container mx-auto p-8">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -111,8 +120,8 @@ export default function AdminPage() {
                     className="flex justify-center items-center"
                   >
                     <img
-                      src={item.image}
-                      className="max-w-[170px] max-h-[170px] cursor-pointer"
+                      src={item.image || "/placeholder.svg"}
+                      className="w-[170px] h-[170px] cursor-pointer"
                       onClick={() => handleItemClick("want", item.id)}
                     />
                   </div>
@@ -124,7 +133,7 @@ export default function AdminPage() {
         <TabsContent value="portfolio">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Portfolio Management</CardTitle>
-            <AddItemModal mode="portfolio" />
+            <Button onClick={() => handleAddItem("portfolio")}>Add Item</Button>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -157,7 +166,7 @@ export default function AdminPage() {
         <TabsContent value="memo">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Memo Management</CardTitle>
-            <AddItemModal mode="memo" />
+            <Button onClick={() => handleAddItem("memo")}>Add Item</Button>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
