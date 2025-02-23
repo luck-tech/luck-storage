@@ -24,7 +24,7 @@ export default function PagesLayout({
           <div className="w-12">{/* Empty div for balance */}</div>
           <Link
             href="/"
-            className="text-2xl text-center hover:text-primary transition-colors"
+            className="text-lg text-center hover:text-primary transition-colors"
           >
             luck storage
           </Link>
