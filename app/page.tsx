@@ -23,7 +23,7 @@ export default function Component() {
     return () => {
       videoElement.removeEventListener("ended", handleVideoEnd);
     };
-  }, []);
+  }, [videos.length]);
 
   const getButtonText = (index: number) => {
     return index === 0 ? "want" : index === 1 ? "portfolio" : "memo";

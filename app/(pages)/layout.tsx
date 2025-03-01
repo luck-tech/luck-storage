@@ -19,12 +19,12 @@ export default function PagesLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="w-full p-4 bg-background border-b">
+      <header className="w-full bg-[#e7ecea] border-b border-black">
         <div className="w-full flex justify-between items-center">
           <div className="w-12">{/* Empty div for balance */}</div>
           <Link
             href="/"
-            className="text-2xl text-center hover:text-primary transition-colors"
+            className="text-lg text-center hover:text-primary transition-colors"
           >
             luck storage
           </Link>
@@ -36,11 +36,21 @@ export default function PagesLayout({
                   <UserIcon className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="end" className="mr-2">
                 <DropdownMenuItem>
                   <LoginButton />
                 </DropdownMenuItem>
-                <DropdownMenuItem>admin</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    style={{
+                      width: "-webkit-fill-available",
+                      textAlign: "left",
+                    }}
+                    href="/admin"
+                  >
+                    admin
+                  </Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
