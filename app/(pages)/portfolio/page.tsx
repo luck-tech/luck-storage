@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -20,7 +19,6 @@ import NavigationButton from "@/app/components/navigation-button";
 
 export default function PortfolioPage() {
   const router = useRouter();
-  const [showCollection, setShowCollection] = useState(false);
 
   const portfolioItems = [
     {

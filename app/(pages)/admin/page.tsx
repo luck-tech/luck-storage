@@ -22,6 +22,7 @@ import { useRouter } from "next/navigation";
 import DeleteAlert from "@/app/components/delete-alert";
 import type { ItemToDelete } from "@/app/types/admin";
 import AddItemModal from "@/app/components/add-item-modal";
+import Image from "next/image";
 
 const wantItems = [
   { id: 1, name: "Item 1", image: "/favicon.ico" },
@@ -119,8 +120,9 @@ export default function AdminPage() {
                     key={item.id}
                     className="flex justify-center items-center"
                   >
-                    <img
-                      src={item.image || "/placeholder.svg"}
+                    <Image
+                      src={item.image}
+                      alt=""
                       className="w-[170px] h-[170px] cursor-pointer"
                       onClick={() => handleItemClick("want", item.id)}
                     />

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/app/components/ui/button";
 import {
@@ -9,12 +8,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu";
-import { Info } from "lucide-react";
 import NavigationButton from "@/app/components/navigation-button";
+import Image from "next/image";
 
 export default function WantPage() {
   const router = useRouter();
-  const [showCollection, setShowCollection] = useState(false);
 
   const wantItems = [
     {
@@ -77,8 +75,9 @@ export default function WantPage() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 3xl:grid-cols-7 gap-8">
           {wantItems.map((item) => (
             <div key={item.id} className="flex justify-center items-center">
-              <img
-                src={item.image || "/placeholder.svg"}
+              <Image
+                src={item.image}
+                alt=""
                 className="w-[170px] h-[170px] cursor-pointer"
                 onClick={() => router.push(item.link)}
               />

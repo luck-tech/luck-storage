@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -16,12 +15,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu";
-import { Info } from "lucide-react";
 import NavigationButton from "@/app/components/navigation-button";
 
 export default function MemoPage() {
   const router = useRouter();
-  const [showCollection, setShowCollection] = useState(false);
 
   const memoItems = [
     {
