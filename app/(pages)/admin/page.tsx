@@ -121,9 +121,11 @@ export default function AdminPage() {
                     className="flex justify-center items-center"
                   >
                     <Image
+                      height={170}
+                      width={170}
                       src={item.image}
                       alt=""
-                      className="w-[170px] h-[170px] cursor-pointer"
+                      className="cursor-pointer"
                       onClick={() => handleItemClick("want", item.id)}
                     />
                   </div>

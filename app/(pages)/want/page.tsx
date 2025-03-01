@@ -76,9 +76,11 @@ export default function WantPage() {
           {wantItems.map((item) => (
             <div key={item.id} className="flex justify-center items-center">
               <Image
+                height={170}
+                width={170}
                 src={item.image}
                 alt=""
-                className="w-[170px] h-[170px] cursor-pointer"
+                className="cursor-pointer"
                 onClick={() => router.push(item.link)}
               />
             </div>
