@@ -151,7 +151,7 @@ This is the conclusion of the memo.
 
       {/* モバイル用の目次（折りたたみ可能） */}
       {showMobileToc && (
-        <div className="md:hidden absolute top-100 right-4 bg-[#e7ecea] z-50">
+        <div className="md:hidden absolute top-100 right-6 bg-[#e7ecea] z-50">
           <Card className="border-none shadow-[0_1px_6px_0_rgba(32,33,36,.6)]">
             <CardHeader className="py-3">
               <CardTitle className="text-lg">TOC</CardTitle>
